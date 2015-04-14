@@ -107,13 +107,13 @@ import javax.swing.JLabel;
 public class play_frame {
 	
 	public static void main(String args[]){
-		Frame f = new Frame("杩炶繛鐪�);
+		Frame f = new Frame("Picture Matching";
 		f.setSize(1000,700);
 		Panel play = new Panel();
 		
 		//Play
 		play.setLayout(new GridLayout(12, 12));
-		for(int i = 0; i < 12*12; i++)  //鎻掑叆鍥剧墖浣嶇疆
+		for(int i = 0; i < 12*12; i++)  //鎻掑叆鍥剧墖浣嶇疆 忽略中文注释mac的乱码问题。。。以后我还是用英语写好了
 		{
 			Button b = new Button(""+i);
 			play.add(b);
@@ -128,8 +128,8 @@ public class play_frame {
 		
 		JLabel j1 = new JLabel();
 		clock.add(j1);
-		Button exit = new Button("杩斿洖涓昏彍鍗�);
-		Button stop = new Button("鏆傚仠");
+		Button exit = new Button("Exit";
+		Button stop = new Button("Stop");
 		clock.add(exit);
 		clock.add(stop);
 		
@@ -137,7 +137,8 @@ public class play_frame {
 		f.pack();
 		f.setVisible(true);
 		
-		int limit = 30;  //鍊掕鏃剁▼搴�		while(limit >= 0)
+		int limit = 30;  //鍊掕鏃剁▼搴�		
+		while(limit >= 0)
 		{
 			j1.setText(limit + "seconds");
 			try
