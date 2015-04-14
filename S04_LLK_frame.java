@@ -100,3 +100,56 @@ public class S04_LLK_frame extends JFrame{
 		});
 	}
 }
+/*************************play_frame************/
+import java.awt.*;
+import javax.swing.JLabel;
+
+public class play_frame {
+	
+	public static void main(String args[]){
+		Frame f = new Frame("杩炶繛鐪�);
+		f.setSize(1000,700);
+		Panel play = new Panel();
+		
+		//Play
+		play.setLayout(new GridLayout(12, 12));
+		for(int i = 0; i < 12*12; i++)  //鎻掑叆鍥剧墖浣嶇疆
+		{
+			Button b = new Button(""+i);
+			play.add(b);
+		}
+		
+		f.add(play, BorderLayout.CENTER);
+		
+		//Clock GUI
+		Panel clock = new Panel();
+		clock.setSize(150, 100);
+		clock.setLayout(new GridLayout(3, 1));
+		
+		JLabel j1 = new JLabel();
+		clock.add(j1);
+		Button exit = new Button("杩斿洖涓昏彍鍗�);
+		Button stop = new Button("鏆傚仠");
+		clock.add(exit);
+		clock.add(stop);
+		
+		f.add(clock, BorderLayout.EAST);
+		f.pack();
+		f.setVisible(true);
+		
+		int limit = 30;  //鍊掕鏃剁▼搴�		while(limit >= 0)
+		{
+			j1.setText(limit + "seconds");
+			try
+			{
+				Thread.sleep(1000);
+			} 
+			catch(InterruptedException e)
+			{
+			    e.printStackTrace();	
+			}
+			limit--;
+		}
+	}
+}
+
